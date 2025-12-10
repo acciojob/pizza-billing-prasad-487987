@@ -48,6 +48,15 @@ public class Pizza {
 	        totalPrice += extraToppingsPrice;
 	        extraToppings= true;
 	    }
+
+	 public void addTakeaway(){
+	        if(!isPaperBagAdded) {
+	        	totalPrice +=20;
+	        	isPaperBagAdded=true;
+	        	
+	        }
+	    }
+
     
         public String getBill(){
 	    	 if (extraCheese) {
