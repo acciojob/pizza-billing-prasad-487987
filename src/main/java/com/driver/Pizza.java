@@ -29,7 +29,7 @@ public class Pizza {
 	        }
 	        
 	        basePrice=totalPrice;
-	        bill += "Base Price Of The Pizza: " + basePrice + "\n";
+	        bill = "Base Price Of The Pizza: " + basePrice + "\n";
 	    }
 
 	    public int getPrice(){
