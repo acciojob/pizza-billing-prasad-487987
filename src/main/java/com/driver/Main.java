@@ -1,6 +1,6 @@
 package com.driver;
 
-public class pizzaMain {
+public class Main {
 	 public static void main(String[] args) {
 		    DeluxePizza dp = new DeluxePizza(false);
 		    dp.addTakeaway();
