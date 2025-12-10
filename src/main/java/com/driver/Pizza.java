@@ -16,6 +16,8 @@ public class Pizza {
 	 
 	 protected int paperBagPrice = 20;
 	 protected int extraCheesePrice = 80;
+
+	 private boolean billGenerated = false;
 	    
      public Pizza(Boolean isVeg){
 	        this.isVeg = isVeg;
@@ -58,19 +60,22 @@ public class Pizza {
 	    }
 
     
-        public String getBill(){
-	    	 if (extraCheese) {
-	             bill += "Extra Cheese Added: " + extraCheesePrice + "\n";
-	         }
-	         if (extraToppings) {
-	             bill += "Extra Toppings Added: " + extraToppingsPrice + "\n";
-	         }
-	         if (isPaperBagAdded) {
-	             bill += "Paperbag Added: " + paperBagPrice + "\n";
-	         }	 
-	         
-	         bill += "Total Price:" + totalPrice;
-	         
-	         return bill;
-	    }
+      public String getBill() {
+    if (!billGenerated) {
+        if (extraCheese) {
+            bill += "Extra Cheese Added: " + extraCheesePrice + "\n";
+        }
+        if (extraToppings) {
+            bill += "Extra Toppings Added: " + extraToppingsPrice + "\n";
+        }
+        if (isPaperBagAdded) {
+            bill += "Paperbag Added: " + paperBagPrice + "\n";
+        }
+
+        bill += "Total Price: " + totalPrice;
+        billGenerated = true;    // <-- IMPORTANT
+    }
+
+    return bill;
+}
 }
